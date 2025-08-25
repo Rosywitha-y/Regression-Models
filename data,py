@@ -1,0 +1,13 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+import kagglehub
+from kagglehub import KaggleDatasetAdapter
+
+# Correct usage: pass the CSV filename as the 3rd *positional* argument
+df = kagglehub.load_dataset(
+    KaggleDatasetAdapter.PANDAS,
+    "abrambeyer/openintro-possum",
+    "possum.csv"  # <-- this must be the actual file in the dataset
+)
+
+print(df.head())
